@@ -15,6 +15,7 @@
 		151E170521FF7617000700C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 151E170321FF7617000700C3 /* LaunchScreen.storyboard */; };
 		151E171021FF7617000700C3 /* TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151E170F21FF7617000700C3 /* TestTests.swift */; };
 		151E171B21FF7617000700C3 /* TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151E171A21FF7617000700C3 /* TestUITests.swift */; };
+		151E172B21FF7688000700C3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151E172A21FF7688000700C3 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		151E171621FF7617000700C3 /* TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		151E171A21FF7617000700C3 /* TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUITests.swift; sourceTree = "<group>"; };
 		151E171C21FF7617000700C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		151E172821FF7624000700C3 /* Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Test.entitlements; sourceTree = "<group>"; };
+		151E172A21FF7688000700C3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				151E172B21FF7688000700C3 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,7 @@
 				151E170E21FF7617000700C3 /* TestTests */,
 				151E171921FF7617000700C3 /* TestUITests */,
 				151E16F521FF7616000700C3 /* Products */,
+				151E172921FF7688000700C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +104,7 @@
 		151E16F621FF7616000700C3 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				151E172821FF7624000700C3 /* Test.entitlements */,
 				151E16F721FF7616000700C3 /* AppDelegate.swift */,
 				151E16F921FF7616000700C3 /* ViewController.swift */,
 				151E16FB21FF7616000700C3 /* Main.storyboard */,
@@ -126,6 +132,14 @@
 				151E171C21FF7617000700C3 /* Info.plist */,
 			);
 			path = TestUITests;
+			sourceTree = "<group>";
+		};
+		151E172921FF7688000700C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				151E172A21FF7688000700C3 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +210,14 @@
 				TargetAttributes = {
 					151E16F321FF7616000700C3 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					151E170A21FF7617000700C3 = {
 						CreatedOnToolsVersion = 10.0;
@@ -436,6 +458,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Test/Test.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UR64E8K793;
 				INFOPLIST_FILE = Test/Info.plist;
@@ -454,6 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Test/Test.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UR64E8K793;
 				INFOPLIST_FILE = Test/Info.plist;
